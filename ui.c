@@ -8,7 +8,7 @@ void DrawStack(Stack *s) {
     int height = 40;
     int gap = 45;
 
-    // Title (Top - clean)
+    // Title 
     DrawText("STACK VISUALIZER", 240, 20, 30, DARKBLUE);
 
     // Stack container boundary
@@ -30,14 +30,14 @@ void DrawStack(Stack *s) {
         DrawText(value, baseX + 40, y + 10, 20, BLACK);
     }
 
-    // TOP Pointer (ASCII arrow - no ? issue)
+    // TOP Pointer 
     if (s->top != -1) {
         int topY = baseY - ((s->top + 1) * gap);
         DrawText("TOP ->", baseX - 100, topY + 10, 22, MAROON);
         DrawLine(baseX - 30, topY + 20, baseX, topY + 20, MAROON);
     }
 
-    // 🔥 Stack Size BELOW container (uses empty space perfectly)
+    //  Stack Size 
     char sizeText[50];
     sprintf(sizeText, "Stack Size: %d / 10", s->top + 1);
     DrawText(sizeText, 200, 560, 25, DARKBLUE);
